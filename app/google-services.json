@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "335980939243",
+    "firebase_url": "https://nexum-project.firebaseio.com",
+    "project_id": "nexum-project",
+    "storage_bucket": "nexum-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335980939243:android:03508a2ed3f47123",
+        "android_client_info": {
+          "package_name": "nexumcorp.projectnexum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335980939243-rd1tgdfgthlbug7hiuqv3u30q357l3t8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nexumcorp.projectnexum",
+            "certificate_hash": "44f34ec98eed380c31927c4164c3e8b18eb07914"
+          }
+        },
+        {
+          "client_id": "335980939243-81ji64l70n8788k81rgj9v5t3h9lk682.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeFMNlOCJaVqIN6q4rwLQSNUctKymQZpY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335980939243-81ji64l70n8788k81rgj9v5t3h9lk682.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
