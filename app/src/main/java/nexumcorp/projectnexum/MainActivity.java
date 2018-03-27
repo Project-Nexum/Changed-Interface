@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         mTabLayout.getTabAt(1).setText(getString(R.string.fragment_favourites));
         mTabLayout.getTabAt(2).setText(getString(R.string.fragment_post));
         mTabLayout.getTabAt(3).setText(getString(R.string.fragment_account));
-
     }
 
 

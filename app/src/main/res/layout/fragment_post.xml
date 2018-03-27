@@ -48,7 +48,7 @@
                         android:layout_marginLeft="10dp"
                         android:background="@null"
                         android:maxLines="2"
-                        android:hint="Title"
+                        android:hint="Name/Business Name"
                         android:textColor="@color/Black"
                         android:padding="10dp"/>
 
@@ -78,7 +78,7 @@
                             android:layout_centerVertical="true"
                             android:maxLines="20"
                             android:background="@null"
-                            android:hint="Description"
+                            android:hint="Job type"
                             android:textColor="@color/Black"
                             android:gravity="start"/>
 
@@ -104,7 +104,7 @@
                             android:layout_centerVertical="true"
                             android:background="@null"
                             android:inputType="numberDecimal"
-                            android:hint="Price"
+                            android:hint="Hourly Rate"
                             android:textColor="@color/Black"/>
 
                     </RelativeLayout>
@@ -127,7 +127,7 @@
                             android:layout_marginLeft="10dp"
                             android:background="@null"
                             android:inputType="textCapWords"
-                            android:hint="Country"
+                            android:hint="County"
                             android:textColor="@color/Black"/>
 
                     </RelativeLayout>
@@ -149,7 +149,7 @@
                             android:layout_marginLeft="10dp"
                             android:background="@null"
                             android:inputType="textCapWords"
-                            android:hint="State/Province/Region"
+                            android:hint="Town"
                             android:textColor="@color/Black"/>
 
                     </RelativeLayout>
@@ -171,7 +171,7 @@
                             android:layout_marginLeft="10dp"
                             android:background="@null"
                             android:inputType="textCapWords"
-                            android:hint="City"
+                            android:hint="Street"
                             android:textColor="@color/Black"/>
 
                     </RelativeLayout>
@@ -212,7 +212,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="35dp"
                             android:layout_marginBottom="35dp"
-                            android:text="post"
+                            android:text="Add"
                             android:background="@drawable/white_onclick_grey"
                             android:layout_centerHorizontal="true"/>
                     </RelativeLayout>

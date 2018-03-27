@@ -20,6 +20,7 @@
     <string name="fragment_maps">Maps</string>
     <string name="fragment_view_post">Post</string>
     <string name="fragment_account">Account</string>
+    <string name="mypost">My Post</string>
 
     <!-- Dialog Names -->
     <string name="dialog_select_photo">SelectPhoto</string>

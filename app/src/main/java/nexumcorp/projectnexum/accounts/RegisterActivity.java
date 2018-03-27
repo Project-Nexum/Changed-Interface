@@ -216,7 +216,7 @@ public class RegisterActivity  extends AppCompatActivity {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 
         //insert into users node
-        reference.child("users")
+        reference.child(getString(R.string.node_users))
                 .child(userid)
                 .setValue(mUser);
 

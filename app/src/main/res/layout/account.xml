@@ -13,6 +13,46 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="48dp"
         android:background="@drawable/white_onclick_grey"
-        android:text="Add Business" />
+        android:text="Sign OUt" />
+
+    <TextView
+        android:id="@+id/namelbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/add_business"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/add_business"
+        android:layout_marginTop="97dp"
+        android:text="Name :" />
+
+    <TextView
+        android:id="@+id/NameTf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/namelbl"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp"
+        android:layout_toEndOf="@+id/namelbl"
+        android:layout_toRightOf="@+id/namelbl"
+        android:text="name" />
+
+    <TextView
+        android:id="@+id/emaillbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/namelbl"
+        android:layout_alignStart="@+id/namelbl"
+        android:layout_below="@+id/namelbl"
+        android:layout_marginTop="35dp"
+        android:text="E-mail :" />
+
+    <TextView
+        android:id="@+id/emailTf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/emaillbl"
+        android:layout_alignLeft="@+id/NameTf"
+        android:layout_alignStart="@+id/NameTf"
+        android:text="e-mail" />
 
 </RelativeLayout>

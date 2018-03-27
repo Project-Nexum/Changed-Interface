@@ -65,7 +65,7 @@ public class favourites extends Fragment {
 
         //reference for listening when items are added or removed from the watch list
         mReference = FirebaseDatabase.getInstance().getReference()
-                .child(getString(R.string.node_watch_list))
+                .child(getString(R.string.fragment_favourites))
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         //set the listener to the reference
@@ -85,7 +85,7 @@ public class favourites extends Fragment {
         mPostsIds = new ArrayList<>();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 
-        Query query = reference.child(getString(R.string.node_watch_list))
+        Query query = reference.child(getString(R.string.fragment_favourites))
                 .orderByKey()
                 .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
 

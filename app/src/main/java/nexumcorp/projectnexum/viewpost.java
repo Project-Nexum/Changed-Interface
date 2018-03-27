@@ -164,7 +164,7 @@ public class viewpost extends Fragment {
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 
-        reference.child(getString(R.string.node_watch_list))
+        reference.child(getString(R.string.fragment_favourites))
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .child(mPostId)
                 .removeValue();
