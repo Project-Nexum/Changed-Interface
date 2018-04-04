@@ -28,7 +28,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_centerHorizontal="true"
                     android:scaleType="centerCrop"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@drawable/ic_image"/>
 
 
                 <RelativeLayout
@@ -171,7 +171,7 @@
                             android:layout_marginLeft="10dp"
                             android:background="@null"
                             android:inputType="textCapWords"
-                            android:hint="Street"
+                            android:hint="Address"
                             android:textColor="@color/Black"/>
 
                     </RelativeLayout>

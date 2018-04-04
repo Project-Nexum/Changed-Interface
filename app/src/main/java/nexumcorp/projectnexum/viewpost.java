@@ -192,7 +192,7 @@ public class viewpost extends Fragment {
 
                     String price = "FREE";
                     if(mPost.getPrice() != null){
-                        price = "$" + mPost.getPrice();
+                        price = "€" + mPost.getPrice();
                     }
                     mPrice.setText(price);
                     String location = mPost.getCity() + ", " + mPost.getState_province() + ", " +

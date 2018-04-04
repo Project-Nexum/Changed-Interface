@@ -29,10 +29,7 @@
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".FiltersActivity" />
-        <activity
-            android:name=".NavActivity"
-            android:label="@string/title_activity_nav"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="10dp"
-        android:background="@color/blue4"
+        android:background="@color/teal1"
         android:id="@+id/app_bar"
         android:fitsSystemWindows="true">
 

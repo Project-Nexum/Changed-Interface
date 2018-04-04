@@ -61,6 +61,7 @@ public class search extends Fragment {
 
     //widgets
     private ImageView mFilters;
+    private ImageView search;
     private EditText mSearchText;
     private FrameLayout mFrameLayout;
 
@@ -82,6 +83,7 @@ public class search extends Fragment {
         mSearchText = (EditText) view.findViewById(R.id.input_search);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         mFrameLayout = (FrameLayout) view.findViewById(R.id.container);
+        search = (ImageView) view.findViewById(R.id.ic_search2);
 
         getElasticSearchPassword();
 
@@ -109,14 +111,9 @@ public class search extends Fragment {
             }
         });
 
-        mSearchText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
-
-                if(actionId == EditorInfo.IME_ACTION_SEARCH
-                        ||actionId == EditorInfo.IME_ACTION_DONE
-                        || keyEvent.getAction()==KeyEvent.ACTION_DOWN
-                        ||keyEvent.getKeyCode()== keyEvent.KEYCODE_ENTER){
+       search.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
 
                     mPosts= new ArrayList<Post>();
 
@@ -193,8 +190,8 @@ public class search extends Fragment {
 
                 }
 
-                return false;
-            }
+                //return false;
+
         });
     }
 

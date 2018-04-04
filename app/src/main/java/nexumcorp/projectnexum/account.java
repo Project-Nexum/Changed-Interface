@@ -45,6 +45,7 @@ public class account extends Fragment {
         View view = inflater.inflate(R.layout.account, container, false);
 
         mSignOut = (Button) view.findViewById(R.id.add_business);
+
         TextView nametf= (TextView) view.findViewById(R.id.NameTf);
         TextView emailtf = (TextView) view.findViewById(R.id.emailTf);
         setupFirebaseListener();

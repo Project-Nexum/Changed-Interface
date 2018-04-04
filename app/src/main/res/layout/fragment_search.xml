@@ -15,8 +15,9 @@
         >
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:id="@+id/linen1">
 
             <EditText
                 android:layout_width="match_parent"
@@ -28,14 +29,7 @@
                 android:textSize="14sp"
                 android:layout_toLeftOf="@+id/ic_search"
                 android:id="@+id/input_search"/>
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/ic_search2"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_search"
-                android:layout_marginRight="5dp"/>
+
 
             <ImageView
                 android:layout_width="50dp"
@@ -43,9 +37,23 @@
                 android:id="@+id/ic_search"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_search"
+                android:src="@drawable/ic_pref"
                 android:layout_marginRight="5dp"/>
 
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/linen1">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ic_search2"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_category"
+                android:layout_marginRight="5dp"/>
 
         </RelativeLayout>
 
