@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             >
 
-            <nexumcorp.projectnexum.util.SquareImageView
+            <nexumcorp.projectnexum.utility.SquareImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/post_image"
@@ -38,13 +38,13 @@
                     />
 
                 <TextView
+                    android:id="@+id/save_post"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="save post"
-                    android:textColor="@color/White"
                     android:layout_below="@+id/add_watch_list"
                     android:layout_centerHorizontal="true"
-                    android:id="@+id/save_post"/>
+                    android:text="save"
+                    android:textColor="@color/White" />
             </RelativeLayout>
 
 

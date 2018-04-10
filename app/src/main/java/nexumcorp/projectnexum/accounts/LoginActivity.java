@@ -25,7 +25,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import nexumcorp.projectnexum.MainActivity;
 import nexumcorp.projectnexum.R;
-import nexumcorp.projectnexum.util.UniversalImageLoader;
+import nexumcorp.projectnexum.utility.UniversalImageLoader;
 
 /**
  * Created by SinghA02 on 03/03/2018.
@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        UniversalImageLoader.setImage("assets://1.png", mLogo);
+        UniversalImageLoader.setImage("assets://Nexum.png", mLogo);
 
         hideSoftKeyboard();
     }

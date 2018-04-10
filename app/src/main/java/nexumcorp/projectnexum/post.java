@@ -33,8 +33,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import nexumcorp.projectnexum.models.Post;
-import nexumcorp.projectnexum.util.RotateBitmap;
-import nexumcorp.projectnexum.util.UniversalImageLoader;
+import nexumcorp.projectnexum.utility.RotateBitmap;
+import nexumcorp.projectnexum.utility.UniversalImageLoader;
 
 /**
  * Created by SinghA02 on 03/03/2018.
@@ -162,7 +162,7 @@ public class post extends Fragment implements SelectPhotoDialog.OnPhotoSelectedL
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Toast.makeText(getActivity(), "compressing image", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Adding business..", Toast.LENGTH_SHORT).show();
             showProgressBar();
         }
 
@@ -196,7 +196,7 @@ public class post extends Fragment implements SelectPhotoDialog.OnPhotoSelectedL
     }
 
     private void executeUploadTask(){
-        Toast.makeText(getActivity(), "uploading image", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "uploading......", Toast.LENGTH_SHORT).show();
 
         final String postId = FirebaseDatabase.getInstance().getReference().push().getKey();
 
@@ -208,7 +208,7 @@ public class post extends Fragment implements SelectPhotoDialog.OnPhotoSelectedL
         uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(getActivity(), "Post Success", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Business successfully added", Toast.LENGTH_SHORT).show();
 
                 //insert the download url into the firebase database
                 Uri firebaseUri = taskSnapshot.getDownloadUrl();
@@ -237,7 +237,7 @@ public class post extends Fragment implements SelectPhotoDialog.OnPhotoSelectedL
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getActivity(), "could not upload photo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "could not upload ", Toast.LENGTH_SHORT).show();
             }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override

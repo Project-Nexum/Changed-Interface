@@ -23,8 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import nexumcorp.projectnexum.models.Post;
-import nexumcorp.projectnexum.util.PostListAdapter;
-import nexumcorp.projectnexum.util.RecyclerViewMargin;
+import nexumcorp.projectnexum.utility.PostListAdapter;
+import nexumcorp.projectnexum.utility.RecyclerViewMargin;
 
 /**
  * Created by SinghA02 on 03/03/2018.

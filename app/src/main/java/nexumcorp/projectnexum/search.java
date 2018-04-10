@@ -1,8 +1,6 @@
 package nexumcorp.projectnexum;
 
 
-import android.app.DownloadManager;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,15 +11,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -37,9 +32,9 @@ import java.util.HashMap;
 import nexumcorp.projectnexum.models.HitsList;
 import nexumcorp.projectnexum.models.HitsObject;
 import nexumcorp.projectnexum.models.Post;
-import nexumcorp.projectnexum.util.ElasticSearchAPI;
-import nexumcorp.projectnexum.util.PostListAdapter;
-import nexumcorp.projectnexum.util.RecyclerViewMargin;
+import nexumcorp.projectnexum.utility.ElasticSearchAPI;
+import nexumcorp.projectnexum.utility.PostListAdapter;
+import nexumcorp.projectnexum.utility.RecyclerViewMargin;
 import okhttp3.Credentials;
 import retrofit2.Call;
 import retrofit2.Callback;

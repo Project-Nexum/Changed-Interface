@@ -1,4 +1,4 @@
-package nexumcorp.projectnexum.util;
+package nexumcorp.projectnexum.utility;
 
 import android.content.Context;
 import android.support.annotation.Nullable;

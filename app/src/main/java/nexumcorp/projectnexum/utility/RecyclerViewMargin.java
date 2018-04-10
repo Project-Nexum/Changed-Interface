@@ -1,4 +1,4 @@
-package nexumcorp.projectnexum.util;
+package nexumcorp.projectnexum.utility;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;

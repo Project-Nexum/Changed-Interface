@@ -29,7 +29,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import nexumcorp.projectnexum.models.Post;
-import nexumcorp.projectnexum.util.UniversalImageLoader;
+import nexumcorp.projectnexum.utility.UniversalImageLoader;
 
 /**
  * Created by SinghA02 on 03/03/2018.
@@ -104,7 +104,7 @@ public class viewpost extends Fragment {
             else if(fragment.getTag().equals("android:switcher:" + R.id.viewpager_container + ":1")){
                 Log.d(TAG, "onClick: switching to: " + getActivity().getString(R.string.fragment_favourites));
 
-                mSavePost.setText("remove post");
+                mSavePost.setText("remove");
                 mSavePost.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -156,11 +156,11 @@ public class viewpost extends Fragment {
                 .child(getString(R.string.field_post_id))
                 .setValue(mPostId);
 
-        Toast.makeText(getActivity(), "Added to watch list", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Added to favourites", Toast.LENGTH_SHORT).show();
     }
 
     private void removeItemFromWatchList(){
-        Log.d(TAG, "removeItemFromWatchList: removing item from watch list.");
+        Log.d(TAG, "removeItemFromWatchList: removing item from favourites.");
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 
@@ -169,7 +169,7 @@ public class viewpost extends Fragment {
                 .child(mPostId)
                 .removeValue();
 
-        Toast.makeText(getActivity(), "Removed from watch list", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Removed from Favourites", Toast.LENGTH_SHORT).show();
     }
 
     private void getPostInfo(){

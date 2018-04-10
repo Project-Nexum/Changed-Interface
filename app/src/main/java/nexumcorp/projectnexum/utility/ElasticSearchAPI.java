@@ -1,4 +1,4 @@
-package nexumcorp.projectnexum.util;
+package nexumcorp.projectnexum.utility;
 
 import java.util.Map;
 
