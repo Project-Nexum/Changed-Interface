@@ -1,6 +1,8 @@
 package nexumcorp.projectnexum;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -10,9 +12,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import nexumcorp.projectnexum.accounts.LoginActivity;
 import nexumcorp.projectnexum.models.Post;
 import nexumcorp.projectnexum.utility.PostListAdapter;
 import nexumcorp.projectnexum.utility.RecyclerViewMargin;
@@ -34,10 +40,12 @@ public class favourites extends Fragment {
     private static final String TAG = "favourites";
     private static final int NUM_GRID_COLUMNS = 3;
     private static final int GRID_ITEM_MARGIN = 5;
+    private FirebaseAuth.AuthStateListener mauthStateListener;
 
     //widgets
     private RecyclerView mRecyclerView;
     private FrameLayout mFrameLayout;
+    private Button mSignOut;
 
     //vars
     private PostListAdapter mAdapter;
@@ -52,10 +60,50 @@ public class favourites extends Fragment {
         View view = inflater.inflate(R.layout.layout_favourites, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.watchListRecyclerView);
         mFrameLayout = (FrameLayout) view.findViewById(R.id.watch_list_container);
+        mSignOut = (Button) view.findViewById(R.id.add_business);
+        setupFirebaseListener();
+        mSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG,"Attempting to sign out User");
+                FirebaseAuth.getInstance().signOut();
+            }
+        });
 
         init();
 
         return view;
+    }
+    private void setupFirebaseListener(){
+        Log.d(TAG,"Setting up the auth state listener");
+        mauthStateListener= new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user= firebaseAuth.getCurrentUser();
+                if(user != null){
+                    Log.d(TAG,"signed_in"+user.getUid());
+                }else{
+                    Log.d(TAG,"onAuthstateChanged: signed_out");
+                    Toast.makeText(getActivity(),"Signed out",Toast.LENGTH_SHORT).show();
+                    Intent intent= new Intent(getActivity(), LoginActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                }
+            }
+        };
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseAuth.getInstance().addAuthStateListener(mauthStateListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if(mauthStateListener != null){
+            FirebaseAuth.getInstance().removeAuthStateListener(mauthStateListener);
+        }
     }
 
     private void init(){

@@ -6,13 +6,23 @@
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="375dp"
         android:id="@+id/watchListRecyclerView"
         android:scrollbars="vertical"
         android:background="@color/lightGrey">
 
 
     </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/add_business"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="83dp"
+        android:background="@drawable/white_onclick_grey"
+        android:text="Sign OUt" />
 
 
 

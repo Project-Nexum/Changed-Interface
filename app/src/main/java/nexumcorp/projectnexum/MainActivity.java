@@ -41,16 +41,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(){
         mPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mPagerAdapter.addFragment(new map());
         mPagerAdapter.addFragment(new search());
-        mPagerAdapter.addFragment(new favourites());
         mPagerAdapter.addFragment(new post());
-        mPagerAdapter.addFragment(new account());
+        mPagerAdapter.addFragment(new favourites());
 
         mViewPager.setAdapter(mPagerAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
-        mTabLayout.getTabAt(0).setText(getString(R.string.fragment_search));
-        mTabLayout.getTabAt(1).setText(getString(R.string.fragment_favourites));
-        mTabLayout.getTabAt(2).setText(getString(R.string.fragment_post));
+        mTabLayout.getTabAt(0).setText("Map");
+        mTabLayout.getTabAt(1).setText(getString(R.string.fragment_search));
+        mTabLayout.getTabAt(2).setText("Add business");
         mTabLayout.getTabAt(3).setText(getString(R.string.fragment_account));
     }
 
