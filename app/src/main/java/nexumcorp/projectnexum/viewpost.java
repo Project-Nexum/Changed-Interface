@@ -156,7 +156,7 @@ public class viewpost extends Fragment {
                 .child(getString(R.string.field_post_id))
                 .setValue(mPostId);
 
-        Toast.makeText(getActivity(), "Added to favourites", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Saved to your Account", Toast.LENGTH_SHORT).show();
     }
 
     private void removeItemFromWatchList(){

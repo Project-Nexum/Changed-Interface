@@ -1,9 +1,12 @@
 package nexumcorp.projectnexum;
 
 import android.graphics.Bitmap;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -31,6 +34,8 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import nexumcorp.projectnexum.models.Post;
 import nexumcorp.projectnexum.utility.RotateBitmap;
@@ -74,6 +79,11 @@ public class post extends Fragment implements SelectPhotoDialog.OnPhotoSelectedL
     private byte[] mUploadBytes;
     private double mProgress = 0;
 
+    //maplocation
+    String add;
+    double latitude;
+    double longitude;
+
 
     @Nullable
     @Override
@@ -89,6 +99,7 @@ public class post extends Fragment implements SelectPhotoDialog.OnPhotoSelectedL
         mContactEmail = view.findViewById(R.id.input_email);
         mPost = view.findViewById(R.id.btn_post);
         mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+
 
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
@@ -192,11 +203,12 @@ public class post extends Fragment implements SelectPhotoDialog.OnPhotoSelectedL
             hideProgressBar();
             //execute the upload task
             executeUploadTask();
+            maplocation();
         }
     }
 
     private void executeUploadTask(){
-        Toast.makeText(getActivity(), "uploading......", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "uploading...", Toast.LENGTH_SHORT).show();
 
         final String postId = FirebaseDatabase.getInstance().getReference().push().getKey();
 
@@ -257,6 +269,43 @@ public class post extends Fragment implements SelectPhotoDialog.OnPhotoSelectedL
         bitmap.compress(Bitmap.CompressFormat.JPEG, quality,stream);
         return stream.toByteArray();
     }
+
+    //adding location to a new database
+    private void maplocation(){
+        String name = mTitle.getText().toString().trim();
+        String address = add;
+        String location_id = FirebaseDatabase.getInstance().getReference().push().getKey();
+        geolocate();
+        location location= new location(name,add,location_id,latitude,longitude);
+        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
+        databaseReference.child("location").child(location_id).setValue(location);
+
+    }
+     private void geolocate(){
+        Log.d(TAG,"geoLocate: Geolocating");
+         add =mCity.getText().toString()+" ,"+mStateProvince.getText().toString()+" ,"+mCountry.getText().toString();
+
+
+         Geocoder geocoder= new Geocoder(getActivity());
+         List<Address> list = new ArrayList<>();
+         try {
+             list = geocoder.getFromLocationName(add,1);
+         }catch(IOException e) {
+             Log.e(TAG,"geoLocate: IOException" +e.getMessage());
+         }
+
+         if(list.size()>0){
+             Address address = list.get(0);
+
+             Log.d(TAG,"geoLOcate:Found a location" + address.toString());
+
+             latitude=address.getLatitude();
+             longitude=address.getLongitude();
+
+             Log.d(TAG,"Latitude: "+latitude+" Longitude: "+longitude);
+         }
+    }
+
 
 
     private void resetFields(){

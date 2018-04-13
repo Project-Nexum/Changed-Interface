@@ -41,32 +41,35 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(){
         mPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-        mPagerAdapter.addFragment(new map());
         mPagerAdapter.addFragment(new search());
-        mPagerAdapter.addFragment(new post());
         mPagerAdapter.addFragment(new favourites());
+        mPagerAdapter.addFragment(new post());
+        mPagerAdapter.addFragment(new map());
+
 
         mViewPager.setAdapter(mPagerAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
-        mTabLayout.getTabAt(0).setText("Map");
-        mTabLayout.getTabAt(1).setText(getString(R.string.fragment_search));
+        mTabLayout.getTabAt(0).setText(getString(R.string.fragment_search));
+        mTabLayout.getTabAt(1).setText(getString(R.string.fragment_account));
         mTabLayout.getTabAt(2).setText("Add business");
-        mTabLayout.getTabAt(3).setText(getString(R.string.fragment_account));
+        mTabLayout.getTabAt(3).setText("Map");
     }
 
 
     private void verifyPermissions(){
         Log.d(TAG, "verifyPermissions: asking user for permissions");
         String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        Manifest.permission.CAMERA};
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA,Manifest.permission.ACCESS_COARSE_LOCATION};
 
         if(ContextCompat.checkSelfPermission(this.getApplicationContext(),
                 permissions[0]) == PackageManager.PERMISSION_GRANTED
                 && ContextCompat.checkSelfPermission(this.getApplicationContext(),
                 permissions[1]) == PackageManager.PERMISSION_GRANTED
                 && ContextCompat.checkSelfPermission(this.getApplicationContext(),
-                permissions[2]) == PackageManager.PERMISSION_GRANTED){
+                permissions[2]) == PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(this.getApplicationContext(),
+                permissions[3]) == PackageManager.PERMISSION_GRANTED){
             setupViewPager();
         }else{
             ActivityCompat.requestPermissions(MainActivity.this,
