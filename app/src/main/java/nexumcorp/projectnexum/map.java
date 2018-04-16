@@ -87,13 +87,7 @@ public class map extends Fragment implements OnMapReadyCallback {
                     double longitude = location.longitude;
                     String addrss = location.name;
                     LatLng latLng= new LatLng(latitude, longitude);
-//                    marker marker = new marker(latitude,longitude);
-//                    markers.add(marker);
-                    mMap.addMarker(new MarkerOptions().position(latLng).title(addrss).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-//                    for (int i= 0;i <markers.size();i++){
-//
-//                    }
-                    Log.d(TAG,"longitude: "+longitude+" latitude: "+latitude);
+                    mMap.addMarker(new MarkerOptions().position(latLng).title(addrss).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)));
                 }
             }
 
